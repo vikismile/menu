@@ -1,13 +1,13 @@
-#pp p{
+#menu p {
     font-size: 14px;
     cursor: pointer;
     padding: 4px;
 }
 
-#pp p:hover{
+#menu p:hover {
     background-color:rgb(215,215,215) ;
 }
-#pp{
+#menu {
     border: 1px solid black;
     width: 130px;
     padding: 5px; 
