@@ -1,0 +1,15 @@
+#pp p{
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px;
+}
+
+#pp p:hover{
+    background-color:rgb(215,215,215) ;
+}
+#pp{
+    border: 1px solid black;
+    width: 130px;
+    padding: 5px; 
+    background-color: rgb(245,245,245);
+}

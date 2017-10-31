@@ -1,0 +1,54 @@
+<html>
+
+<head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <p id="pp"></p>
+    <script>
+        a = 'https://dev.bfgw.bettings.ch/api/navigation/?account_id=bHi9lzgei'
+        f();
+        function f() {
+            fetch(a)
+                .then(
+                function (response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+
+                    response.json().then(function (data) {
+                        for (var i = 0; i < data.children.length; i++) {
+                            console.log(data.children[i].name);
+                            var p = document.createElement('p');
+                            p.innerHTML = data.children[i].name;
+                            pp.appendChild(p);
+                            p.id = data.children[i].id;
+                        }
+                        function url() {
+                            t = event.target || event.srcElement;
+                            return ('https://dev.bfgw.bettings.ch/api/navigation/' + t.id + '?account_id=bHi9lzgei');
+                        }
+
+                        pp.onclick = function i() {
+                            a = url();
+                            document.getElementById('pp').innerHTML = ''
+                            p.innerHTML = "Main menu";
+                            pp.appendChild(p);
+                            p.id = "";
+                            f();
+                        }
+                    });
+                }
+                )
+                .catch(function (err) {
+                    console.log('Fetch Error :-S', err);
+                });
+
+        }
+    </script>
+</body>
+
+</html>
